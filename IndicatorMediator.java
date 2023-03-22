@@ -59,14 +59,14 @@ public class IndicatorMediator {
 
             pageTransformer = new IndicatorPageTransformer(indicator);
             viewPager2.registerOnPageChangeCallback(indicatorPageChangeCallback);
-            viewPager2.setPageTransformer(pageTransformer);
+            ViewPager2Util.addPageTransformer(viewPager2,pageTransformer);
         }
     }
 
     public void detach() {
         if (viewPager2 != null && indicatorPageChangeCallback != null && indicator != null) {
             viewPager2.unregisterOnPageChangeCallback(indicatorPageChangeCallback);
-            viewPager2.setPageTransformer(null);
+            ViewPager2Util.removePageTransformer(viewPager2,pageTransformer);
             indicator.removeAllViews();
         }
     }
