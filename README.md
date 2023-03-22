@@ -1,0 +1,2 @@
+# IndicatorMediator
+仿京东首页轮播图indicator 搭配viewpager2使用
